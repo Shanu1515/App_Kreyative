@@ -25,6 +25,10 @@ dependencies:
   cupertino_icons: ^0.1.2
   lottie: ^0.3.3
   shimmer: ^1.1.1
+  getflutter: ^1.0.11
+  flutter_timer: ^0.0.6
+  fluttertoast: ^4.0.1
+  image_picker: ^0.6.5+3
 
 
 dev_dependencies:
@@ -46,12 +50,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/girl.png
-    - assets/Group 191.png
-    - assets/elementary logo.png
-    - assets/elementary logo2.png
-    - assets/school logo.png
-    - assets/book icon.png
-    - assets/IIT Logo.png
     - assets/9730-rolling-pencil.json
     - assets/hello.json
     - assets/18833-refresh.json
@@ -63,9 +61,6 @@ flutter:
     - assets/10th.png
     - assets/11th.png
     - assets/12th.png
-    - assets/school logo2.png
-    - assets/book icon2.png
-    - assets/IIT Logo2.png
     - assets/images.jpg
     - assets/imagestwo.jpg
     - assets/music.png
@@ -74,6 +69,39 @@ flutter:
     - assets/drawing.png
     - assets/reading.png
     - assets/pic.png
+    - assets/physics.png
+    - assets/physics2.png
+    - assets/biology.png
+    - assets/biologytwo.png
+    - assets/physicsok.png
+    - assets/physicskar.png
+    - assets/biologykar.png
+    - assets/chemist.png
+    - assets/dividers.png
+    - assets/book-icon2.png
+    - assets/bookwala.png
+    - assets/IITwala.png
+    - assets/schoolwala.png
+    - assets/elementarywala.png
+    - assets/physicswala.png
+    - assets/hourglass.png
+    - assets/stopwatch.png
+    - assets/target.png
+    - assets/bear.png
+    - assets/bearhd.png
+    - assets/bearxhd.png
+    - assets/capture.png
+    - assets/man.png
+    - assets/cat.png
+    - assets/dog.png
+    - assets/bunny.png
+    - assets/shark.png
+    - assets/ppl.png
+
+
+
+
+
 
 
 
