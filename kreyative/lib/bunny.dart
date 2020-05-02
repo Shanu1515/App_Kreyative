@@ -33,7 +33,7 @@ class Bunnypath extends StatelessWidget {
                     alignment: Alignment.center,
                     padding: EdgeInsets.only(top: 0, bottom: 10),
                     child: Text(
-                      'Click on the image to change your avatar',
+                      'Click on the image to change your avatar ',
                       style: TextStyle(
                           fontSize: 18,
                           color: Colors.black54,
@@ -50,7 +50,7 @@ class Bunnypath extends StatelessWidget {
                           fontWeight: FontWeight.w700),
                     )),
                 Container(
-                    height: 90,
+                    height: 95,
                     width: double.infinity,
                     child: RaisedButton(
                         hoverElevation: 25,
