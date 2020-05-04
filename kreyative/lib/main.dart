@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kreyative/dog.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:getflutter/getflutter.dart';
@@ -10,6 +11,9 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:async';
 import 'dart:io';
 import './bunny.dart';
+import './dog.dart';
+import 'package:flutter_otp/flutter_otp.dart';
+import './sms.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -35,27 +39,24 @@ class _State extends State<MyApp> {
               children: <Widget>[
                 Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.all(10),
                     child: Text(
-                      'Kriyative Education',
+                      '',
                       style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.w500,
-                          fontSize: 30),
+                          fontSize: 15),
                     )),
                 new Column(
                   children: <Widget>[
-                    Lottie.asset('assets/9730-rolling-pencil.json',
-                        width: 200, height: 200),
+                    Image.asset('assets/kodate.png', width: 250, height: 230),
                   ],
                 ),
                 Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.all(10),
                     child: Text(
                       'Sign in',
                       style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
                     )),
                 Container(
                   padding: EdgeInsets.all(10),
@@ -171,11 +172,11 @@ class SecondRoute extends StatelessWidget {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      'Kriyative Education',
+                      'Kodate',
                       style: TextStyle(
                           color: Colors.blue,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 30),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 35),
                     )),
                 new Column(
                   children: <Widget>[
@@ -247,6 +248,12 @@ class SecondRoute extends StatelessWidget {
 }
 
 class ThirdRoute extends StatelessWidget {
+  void sendOtp(String phoneNumber, [String messageText]) {
+    sendOtp('958347XXXX', 'OTP for verification is : ');
+  }
+
+  int enteredOtp;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -3845,7 +3852,7 @@ class _PickImageDemoState extends State<PickImageDemo> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PickImageDemo()),
+                  MaterialPageRoute(builder: (context) => Dogpath()),
                 );
               },
             ),
@@ -4514,7 +4521,7 @@ class Homepage2 extends StatelessWidget {
               )),
           Container(
               alignment: Alignment.bottomLeft,
-              padding: EdgeInsets.only(left: 20, top: 620, right: 20),
+              padding: EdgeInsets.only(left: 20, top: 500, right: 20),
               child: ListView(children: <Widget>[
                 new Container(
                     decoration:

@@ -29,6 +29,8 @@ dependencies:
   flutter_timer: ^0.0.6
   fluttertoast: ^4.0.1
   image_picker: ^0.6.5+3
+  flutter_otp: ^0.3.2
+  sms_receiver: ^0.3.1+1
 
 
 dev_dependencies:
@@ -97,6 +99,7 @@ flutter:
     - assets/bunny.png
     - assets/shark.png
     - assets/ppl.png
+    - assets/kodate.png
 
 
 

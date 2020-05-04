@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kreyative/main.dart';
 
-class Bunnypath extends StatelessWidget {
+class Dogpath extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class Bunnypath extends StatelessWidget {
                     height: 228.5,
                     padding: EdgeInsets.only(top: 40),
                     child: IconButton(
-                      icon: Image.asset('assets/bunny.png'),
+                      icon: Image.asset('assets/dog.png'),
                       color: Colors.white,
                       padding: EdgeInsets.all(20),
                       iconSize: 120,
@@ -253,7 +253,7 @@ class Homepage3 extends StatelessWidget {
             alignment: Alignment(0.6, -0.8),
             child: CircleAvatar(
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage('assets/bunny.png'),
+              backgroundImage: AssetImage('assets/dog.png'),
               radius: 60.0,
             ),
           ),
@@ -425,7 +425,7 @@ class Homepage3 extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: CircleAvatar(
                       backgroundColor: Colors.white,
-                      backgroundImage: AssetImage('assets/bunny.png'),
+                      backgroundImage: AssetImage('assets/dog.png'),
                       radius: 50.0,
                     ),
                   ),
