@@ -31,6 +31,13 @@ dependencies:
   image_picker: ^0.6.5+3
   flutter_otp: ^0.3.2
   sms_receiver: ^0.3.1+1
+  chewie: ^0.9.10
+  video_player: ^0.10.9+1
+  carousel_slider: ^2.1.0
+  video_thumbnail: ^0.2.1
+  google_fonts: ^1.0.0
+  youtube_player_flutter: ^6.1.1
+
 
 
 dev_dependencies:
@@ -100,6 +107,9 @@ flutter:
     - assets/shark.png
     - assets/ppl.png
     - assets/kodate.png
+    - assets/Flowers.mp4
+    - assets/Information.mp4
+    - assets/Sample.mp4
 
 
 

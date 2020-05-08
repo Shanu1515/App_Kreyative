@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kreyative/dog.dart';
+import 'package:kreyative/videoslider.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:getflutter/getflutter.dart';
@@ -14,6 +15,12 @@ import './bunny.dart';
 import './dog.dart';
 import 'package:flutter_otp/flutter_otp.dart';
 import './sms.dart';
+
+import './carousel.dart';
+import './videoslider.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import './videopage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -249,10 +256,10 @@ class SecondRoute extends StatelessWidget {
 
 class ThirdRoute extends StatelessWidget {
   void sendOtp(String phoneNumber, [String messageText]) {
-    sendOtp('958347XXXX', 'OTP for verification is : ');
+    sendOtp('9971715927', 'OTP for verification is : ');
   }
 
-  int enteredOtp;
+  String enteredOtp;
 
   @override
   Widget build(BuildContext context) {
@@ -271,15 +278,18 @@ class ThirdRoute extends StatelessWidget {
                   ],
                 ),
                 Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(20),
-                    child: Text(
-                      'Verification code',
-                      style: TextStyle(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    'Verification code',
+                    style: GoogleFonts.oswald(
+                      textStyle: TextStyle(
                           color: Colors.purpleAccent,
                           fontWeight: FontWeight.w500,
-                          fontSize: 25),
-                    )),
+                          fontSize: 28),
+                    ),
+                  ),
+                ),
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(20),
@@ -290,6 +300,9 @@ class ThirdRoute extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
+                    onChanged: (val) {
+                      enteredOtp = val;
+                    },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       counterText: 'Time remaining 2:00',
@@ -1100,7 +1113,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                  MaterialPageRoute(builder: (context) => CarouselDemo()),
                 );
               },
               child: const Text('Biology', style: TextStyle(fontSize: 15)),
@@ -1118,7 +1131,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                  MaterialPageRoute(builder: (context) => Homepage()),
                 );
               },
               child: const Text('Physics', style: TextStyle(fontSize: 15)),
@@ -1152,7 +1165,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                  MaterialPageRoute(builder: (context) => ChewieDemo()),
                 );
               },
               child: const Text('Mathematics', style: TextStyle(fontSize: 15)),
@@ -1170,7 +1183,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                  MaterialPageRoute(builder: (context) => Homepage()),
                 );
               },
               child: const Text('Chemistry', style: TextStyle(fontSize: 15)),
@@ -1279,10 +1292,8 @@ class Homepage extends StatelessWidget {
                 size: 37,
               ),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Videoonepage()));
               },
             ),
             Divider(
