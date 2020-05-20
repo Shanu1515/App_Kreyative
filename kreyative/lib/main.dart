@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kreyative/dog.dart';
+import 'package:kreyative/livestream.dart';
 import 'package:kreyative/videoslider.dart';
+import 'package:kreyative/zoomwala.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:getflutter/getflutter.dart';
@@ -21,6 +23,14 @@ import './videoslider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import './videopage.dart';
+import './livestream.dart';
+import './zoomwala.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import './target.dart';
+import './courses.dart';
+import './sixth.dart';
+import './seventh.dart';
+import './performancepage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -550,7 +560,7 @@ class Course extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => IntroductionPage()),
+                                builder: (context) => IntroductionPagetwo()),
                           );
                           //signup screen
                         },
@@ -581,7 +591,7 @@ class Course extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => IntroductionPage()),
+                                builder: (context) => IntroductionPagethree()),
                           );
                           //signup screen
                         },
@@ -1131,7 +1141,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Homepage()),
+                  MaterialPageRoute(builder: (context) => Videoonepage()),
                 );
               },
               child: const Text('Physics', style: TextStyle(fontSize: 15)),
@@ -1165,7 +1175,7 @@ class Homepage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ChewieDemo()),
+                  MaterialPageRoute(builder: (context) => Courses()),
                 );
               },
               child: const Text('Mathematics', style: TextStyle(fontSize: 15)),
@@ -1306,15 +1316,15 @@ class Homepage extends StatelessWidget {
               title: Text('My Rewards', style: TextStyle(fontSize: 24)),
               contentPadding: EdgeInsets.only(left: 17, top: 8),
               leading: Icon(
-                Icons.card_giftcard,
+                MdiIcons.gift,
                 color: Colors.black,
                 size: 37,
               ),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GetUserMediaSample()));
               },
             ),
             Divider(
@@ -1396,10 +1406,11 @@ class Homepage extends StatelessWidget {
                 size: 37,
               ),
               onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ExampleApp()));
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-                Navigator.pop(context);
               },
             ),
             Divider(

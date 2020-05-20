@@ -121,6 +121,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_webrtc:
+    dependency: "direct main"
+    description:
+      name: flutter_webrtc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.8"
+  flutter_zoom_plugin:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "0.0.7"
+      resolved-ref: "08999fdfc4ce035781d3078d445d6cc97ccb3f6f"
+      url: "git://github.com/decodedhealth/flutter_zoom_plugin.git"
+    source: git
+    version: "0.0.7"
   fluttertoast:
     dependency: "direct main"
     description:
@@ -191,6 +207,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.6"
+  material_design_icons_flutter:
+    dependency: "direct main"
+    description:
+      name: material_design_icons_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.5245"
   meta:
     dependency: transitive
     description:
@@ -247,6 +270,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0+1"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.3"
   petitparser:
     dependency: transitive
     description:
