@@ -107,7 +107,7 @@ class _CoursesState extends State<Courses> with SingleTickerProviderStateMixin {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          tabs(context, Icons.videocam, "Video"),
+                          tabs(context, Icons.videocam, "Videos"),
                           tabs(context, Icons.attach_file, "Notes"),
                           tabs(context, Icons.assignment, "Challenges"),
                           tabs(context, Icons.track_changes, "Analysis"),

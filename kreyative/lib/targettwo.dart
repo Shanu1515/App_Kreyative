@@ -11,6 +11,7 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 //import 'package:KriyativeEd/authenticate.dart';
 import 'package:provider/provider.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
+import 'package:add_thumbnail/add_thumbnail.dart';
 
 class Targettwo extends StatefulWidget {
   @override
@@ -85,7 +86,7 @@ class _TargettwoState extends State<Targettwo>
                       //  }
                     ),
                     badge(
-                      h * 0.085, w * 0.2, "Challenges", Icons.assignment,
+                      h * 0.085, w * 0.2, "Challenge", Icons.assignment,
                       //  (){
                       //    setState(() {
                       //      ic["v"]=Colors.purple[700];
@@ -664,56 +665,76 @@ Widget testSeries() {
 }
 
 class Video extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
   Widget build(BuildContext context) {
-    //final user = Provider.of<FirebaseUser>(context);
-    return Container(
-      child: Column(
-        children: <Widget>[
-          RaisedButton(
-              color: Colors.deepPurple,
+    return MaterialApp(
+      title: 'Add Thumbnail',
+      home: MyHomePage(title: 'Thumbnail'),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  List<MediaInfo> mediaList = [];
+  List<String> urlList = [
+    "https://www.youtube.com/watch?v=drvxcAxJQ-0",
+    "https://www.youtube.com/watch?v=jwGLWZUyiLA",
+    "https://www.youtube.com/watch?v=FFFm928eiPk",
+    "https://www.youtube.com/watch?v=tFmkpkWt5h4",
+    "https://www.youtube.com/watch?v=XY-G9P2oU7g"
+  ];
+  //List<String> urlListtwo = ["https://www.youtube.com/watch?v=XY-G9P2oU7g"];
+
+  void openAddLinkDialog() async {
+    // Open  thumbnail dialog to add link
+    await Thumbnail.addLink(
+      context: context,
+
+      /// callback that return thumbnail information in `MediaInfo` object
+      onLinkAdded: (mediaInfo) {
+        if (mediaInfo != null && mediaInfo.thumbnailUrl.isNotEmpty) {
+          setState(() {
+            mediaList.add(mediaInfo);
+          });
+        }
+      },
+    );
+  }
+
+  Widget getMediaList() {
+    return MediaListView(
+      onPressed: (url) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Videoonepage()));
+      },
+      urls: urlList,
+      mediaList: mediaList,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFEEEEEE),
+      body: (mediaList == null || mediaList.isEmpty) &&
+              (urlList == null || urlList.isEmpty)
+          ? Center(
               child: Text(
-                "Open Videos for lesson 1",
-                style: TextStyle(color: Colors.white),
+                "Press add button to add thumbnail.",
+                style: TextStyle(color: Colors.black54, fontSize: 16),
               ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Videoonepage()));
-              }),
-          RaisedButton(
-              color: Colors.deepPurple,
-              child: Text(
-                "Open Videos for lesson 2",
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Homepage()));
-              }),
-          RaisedButton(
-              color: Colors.deepPurple,
-              child: Text(
-                "Open Videos for lesson 3",
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Homepage()));
-              }),
-          // RaisedButton(
-          //   color: Colors.deepPurple,
-          //   child: Text("SignOut",style: TextStyle(color: Colors.white),),
-          //   onPressed:()async{
-          //    await AuthService().signOutF();
-          //     if(user==null) {
-          //       await Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));
-          //     }
-          //     else{
-          //      // return CircularProgressIndicator();
-          //     }
-          //    }
-          // )
-        ],
-      ),
+            )
+          : getMediaList(),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kreyative/dog.dart';
 import 'package:kreyative/livestream.dart';
+
 import 'package:kreyative/videoslider.dart';
 import 'package:kreyative/zoomwala.dart';
 import 'package:lottie/lottie.dart';
@@ -31,6 +32,8 @@ import './courses.dart';
 import './sixth.dart';
 import './seventh.dart';
 import './performancepage.dart';
+
+import './thumbnailtwo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -1385,10 +1388,8 @@ class Homepage extends StatelessWidget {
                 size: 37,
               ),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Homepage()));
               },
             ),
             Divider(
@@ -1428,10 +1429,8 @@ class Homepage extends StatelessWidget {
                 size: 37,
               ),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Thumbnailput()));
               },
             ),
             Divider(
